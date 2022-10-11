@@ -33,8 +33,8 @@ class CustomToast extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            width: 350,
-            height: 80,
+            width: 300,
+            height: 60,
             padding: EdgeInsets.symmetric(horizontal: 15),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -54,8 +54,8 @@ class CustomToast extends StatelessWidget {
                   alertType == "success"
                       ? "assets/logo/success_logo.png"
                       : "assets/logo/failed_logo.png",
-                  width: 35,
-                  height: 35,
+                  width: 15,
+                  height: 15,
                 ),
                 SizedBox(width: 15),
                 Expanded(
@@ -69,9 +69,7 @@ class CustomToast extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.start,
                     style: TextStyle(
-                      fontFamily: 'Kanit',
-                      fontSize: 18,
-                    ),
+                        fontFamily: 'Kanit', fontSize: 14, color: Colors.black),
                   ),
                 )
               ],
