@@ -38,7 +38,7 @@ class _ProductState extends State<Product> {
   }
 
   ScrollController scrollController = ScrollController();
-  Future<void> fetchBranch() async {
+  Future<void> fetchProduct() async {
     try {
       data = await getRequest(
         path: API_URL.PRODUCT_URL,
@@ -63,7 +63,7 @@ class _ProductState extends State<Product> {
   @override
   void initState() {
     super.initState();
-    fetchBranch();
+    fetchProduct();
   }
 
   @override
