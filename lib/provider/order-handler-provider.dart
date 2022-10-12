@@ -62,6 +62,8 @@ class OrderHandlerProvider extends ChangeNotifier {
     carts.add(cart);
     sumPrice += cart['sumPrice'];
 
+    print(carts);
+
     notifyListeners();
   }
 }

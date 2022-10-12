@@ -61,9 +61,9 @@ Future<dynamic> getRequest({
   Map<String, dynamic>? queryParameters,
 }) async {
   BaseOptions options = BaseOptions(
-    connectTimeout: 7000,
-    receiveTimeout: 7000,
-    sendTimeout: 7000,
+    connectTimeout: 9000, //70 seconds
+    receiveTimeout: 9000, //70 seconds
+    sendTimeout: 9000, //70 seconds
   );
   var dio = Dio(options);
   try {

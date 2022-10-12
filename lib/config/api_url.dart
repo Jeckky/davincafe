@@ -16,6 +16,6 @@ class API_URL {
   static final UPDATE_ITEM = "${URL}/{id}/update";
   static final DELETE = "${URL}/{id}/delete";
 
-  static final UPDATESTATUS_URL = "${URL}/order_list/{id}/updatestatus";
-  static final SEARCH_URL = "${URL}/order_detail/search/?q={q}&by={by}&t={t}";
+  // static final UPDATESTATUS_URL = "${URL}/order_list/{id}/updatestatus";
+  // static final SEARCH_URL = "${URL}/order_detail/search/?q={q}&by={by}&t={t}";
 }
