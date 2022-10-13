@@ -7,7 +7,7 @@ class AuthProvider {
   void logout(BuildContext context) async {
     await LocalStorage.instance.setBooleanValue("isLogin", false);
 
-    final branch = await LocalStorage.instance.getJson("branch");
+    //final branch = await LocalStorage.instance.getJson("branch");
 
     // await LocalStorage.instance.removeValue("branch");
     // await LocalStorage.instance.removeValue("ip1");
