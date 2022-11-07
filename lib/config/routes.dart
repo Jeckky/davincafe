@@ -5,6 +5,7 @@ import 'package:davincafe/product.dart';
 import 'package:flutter/material.dart';
 
 Route<dynamic>? getAllRoute(RouteSettings settings) {
+  print(settings.name);
   switch (settings.name) {
     case Product.routeName:
       return MaterialPageRoute(

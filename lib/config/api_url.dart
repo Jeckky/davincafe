@@ -1,6 +1,8 @@
 final HOSTNAME = "https://davin-cafe.onrender.com";
 
 class API_URL {
+  //การสร้างตัวสร้างส่วนตัวเพื่อป้องกันการสร้างอินสแตนซ์
+  //ป้องกันการสร้างอินสแตนซ์ของ Class
   API_URL._();
   static final PATH = "";
   //static final PATH = "/api/v1";

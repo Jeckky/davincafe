@@ -59,6 +59,7 @@ dependencies:
   pin_code_fields: ^7.4.0
   toggle_switch: ^2.0.1
   flutter_switch: ^0.3.2
+  fluentui_icons: ^1.0.0
 
 dev_dependencies:
   flutter_test:

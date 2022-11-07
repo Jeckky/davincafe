@@ -1,7 +1,6 @@
-import 'package:davincafe/product.dart';
+import 'package:davincafe/bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:davincafe/config/routes.dart';
 import 'package:davincafe/provider/order-handler-provider.dart';
 import 'package:provider/provider.dart';
 
@@ -50,8 +49,9 @@ class _MyAppState extends State<MyApp> {
         ),
         navigatorKey: navigatorKey,
         debugShowCheckedModeBanner: false,
-        onGenerateRoute: getAllRoute,
-        initialRoute: Product.routeName,
+        //onGenerateRoute: getAllRoute,
+        ///initialRoute: Product.routeName,
+        home: const BottomBar(),
       ),
     );
   }

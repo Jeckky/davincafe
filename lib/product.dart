@@ -4,15 +4,11 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:davincafe/config/api_url.dart';
 import 'package:davincafe/dessert.dart';
 import 'package:davincafe/detail.dart';
-import 'package:davincafe/drink.dart';
 import 'package:davincafe/food.dart';
 import 'package:davincafe/network/request-exception.dart';
-import 'package:davincafe/provider/local_storage.dart';
-import 'package:davincafe/provider/order-handler-provider.dart';
 import 'package:davincafe/util/custom-toast.dart';
 import 'package:flutter/material.dart';
 import 'package:image_fade/image_fade.dart';
-import 'package:provider/provider.dart';
 import 'package:davincafe/network/request.dart';
 
 class Product extends StatefulWidget {
@@ -23,28 +19,19 @@ class Product extends StatefulWidget {
 }
 
 class _ProductState extends State<Product> {
-  int _selectedIndex = 0;
   bool isLoad = true;
   List allProduct = [];
   List data = [];
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-      if (_selectedIndex == 0) {
-      } else if (_selectedIndex == 1) {
-      } else if (_selectedIndex == 2) {}
-    });
-  }
-
   ScrollController scrollController = ScrollController();
+
   Future<void> fetchProduct() async {
     try {
       data = await getRequest(
         path: API_URL.PRODUCT_URL,
         context: context,
       );
-      allProduct = List.from(data);
+      allProduct = data; //List.from(data);
       // print(allProduct);
       // ('object');
       setState(() {
@@ -78,7 +65,7 @@ class _ProductState extends State<Product> {
         centerTitle: false,
       ),
       body: Container(
-        padding: EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
         child: Column(children: [
           Container(
             height: 38,
@@ -88,76 +75,76 @@ class _ProductState extends State<Product> {
                 //padding: EdgeInsets.all(0),
                 children: [
                   Container(
-                    padding: EdgeInsets.all(8),
-                    margin: new EdgeInsets.only(right: 0.0),
-                    decoration: new BoxDecoration(
-                      borderRadius: new BorderRadius.circular(5.0),
-                      color: Color.fromARGB(159, 207, 109, 28),
+                    padding: const EdgeInsets.all(8),
+                    margin: EdgeInsets.only(right: 0.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5.0),
+                      color: const Color.fromARGB(159, 207, 109, 28),
                     ),
                     //width: (size.width / 5) - 10,
-                    child: Text('Special',
+                    child: const Text('Special',
                         style: TextStyle(color: Colors.white, fontSize: 16)),
                   ),
                   Container(
-                    padding: EdgeInsets.all(8),
-                    margin: new EdgeInsets.only(left: 5.0),
-                    decoration: new BoxDecoration(
-                      borderRadius: new BorderRadius.circular(5.0),
-                      color: Color.fromARGB(159, 207, 109, 28),
+                    padding: const EdgeInsets.all(8),
+                    margin: EdgeInsets.only(left: 5.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5.0),
+                      color: const Color.fromARGB(159, 207, 109, 28),
                     ),
                     //width: (size.width / 5) - 10,
-                    child: Text('Coffee',
+                    child: const Text('Coffee',
                         style: TextStyle(color: Colors.white, fontSize: 16)),
                   ),
                   Container(
-                    padding: EdgeInsets.all(8),
-                    margin: new EdgeInsets.only(left: 5.0),
-                    decoration: new BoxDecoration(
-                      borderRadius: new BorderRadius.circular(5.0),
-                      color: Color.fromARGB(159, 207, 109, 28),
+                    padding: const EdgeInsets.all(8),
+                    margin: EdgeInsets.only(left: 5.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5.0),
+                      color: const Color.fromARGB(159, 207, 109, 28),
                     ),
                     //width: (size.width / 5) - 10,
-                    child: Text('Non-Coffee',
+                    child: const Text('Non-Coffee',
                         style: TextStyle(color: Colors.white, fontSize: 16)),
                   ),
                   Container(
-                    padding: EdgeInsets.all(8),
-                    margin: new EdgeInsets.only(left: 5.0),
-                    decoration: new BoxDecoration(
-                      borderRadius: new BorderRadius.circular(5.0),
-                      color: Color.fromARGB(159, 207, 109, 28),
+                    padding: const EdgeInsets.all(8),
+                    margin: EdgeInsets.only(left: 5.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5.0),
+                      color: const Color.fromARGB(159, 207, 109, 28),
                     ),
                     //width: (size.width / 5) - 10,
-                    child: Text('Soft Drink',
+                    child: const Text('Soft Drink',
                         style: TextStyle(color: Colors.white, fontSize: 16)),
                   ),
                   Container(
-                    padding: EdgeInsets.all(8),
-                    margin: new EdgeInsets.only(left: 5.0),
-                    decoration: new BoxDecoration(
-                      borderRadius: new BorderRadius.circular(5.0),
-                      color: Color.fromARGB(159, 207, 109, 28),
+                    padding: const EdgeInsets.all(8),
+                    margin: EdgeInsets.only(left: 5.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5.0),
+                      color: const Color.fromARGB(159, 207, 109, 28),
                     ),
                     //width: (size.width / 5) - 10,
-                    child: Text('Soft Drink',
+                    child: const Text('Soft Drink',
                         style: TextStyle(color: Colors.white, fontSize: 16)),
                   ),
                   Container(
-                    padding: EdgeInsets.all(8),
-                    margin: new EdgeInsets.only(left: 5.0),
-                    decoration: new BoxDecoration(
-                      borderRadius: new BorderRadius.circular(5.0),
-                      color: Color.fromARGB(159, 207, 109, 28),
+                    padding: const EdgeInsets.all(8),
+                    margin: EdgeInsets.only(left: 5.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5.0),
+                      color: const Color.fromARGB(159, 207, 109, 28),
                     ),
                     //width: (size.width / 5) - 10,
-                    child: Text('Soft Drink',
+                    child: const Text('Soft Drink',
                         style: TextStyle(color: Colors.white, fontSize: 16)),
                   ),
                 ],
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Expanded(
@@ -165,7 +152,7 @@ class _ProductState extends State<Product> {
               interactive: true,
               thumbVisibility: true,
               controller: scrollController,
-              radius: Radius.circular(150),
+              radius: const Radius.circular(150),
               child: SingleChildScrollView(
                 controller: scrollController,
                 child: LayoutBuilder(
@@ -195,11 +182,11 @@ class _ProductState extends State<Product> {
                             },
                             child: Container(
                               height: 150,
-                              padding: EdgeInsets.all(8),
-                              margin: new EdgeInsets.only(bottom: 10),
-                              decoration: new BoxDecoration(
-                                borderRadius: new BorderRadius.circular(10.0),
-                                color: Color.fromARGB(159, 68, 67, 67),
+                              padding: const EdgeInsets.all(8),
+                              margin: const EdgeInsets.only(bottom: 10),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.0),
+                                color: const Color.fromARGB(159, 68, 67, 67),
                               ),
                               //width: (size.width / 5) - 10,
                               child: Row(
@@ -209,22 +196,27 @@ class _ProductState extends State<Product> {
                                   Container(
                                     width: (constraints.maxWidth / 7) + 100,
                                     child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           res['productName'],
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               color: Colors.white,
                                               fontSize: 16),
                                         ),
                                         Text(
                                           res['description'],
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               color: Colors.white,
                                               fontSize: 16),
                                         ),
                                         Text(
-                                          res['coolPrice'].toString(),
-                                          style: TextStyle(
+                                          res['coolPrice'] != null
+                                              ? '฿' +
+                                                  res['coolPrice'].toString()
+                                              : '',
+                                          style: const TextStyle(
                                               color: Colors.white,
                                               fontSize: 16),
                                         ),
@@ -239,7 +231,7 @@ class _ProductState extends State<Product> {
                                           width: constraints.maxWidth * 0.4,
                                           height: constraints.maxWidth * 0.6,
                                           clipBehavior: Clip.hardEdge,
-                                          decoration: BoxDecoration(
+                                          decoration: const BoxDecoration(
                                             shape: BoxShape.rectangle,
                                             color: Colors.white,
                                           ),
@@ -271,26 +263,6 @@ class _ProductState extends State<Product> {
             ),
           ),
         ]),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.restaurant_menu),
-            label: 'เครื่องดื่ม',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.open_in_new_rounded),
-            label: 'อาหาร',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.open_in_new_rounded),
-            label: 'ของหวาน',
-          ),
-        ],
-        // currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
-        currentIndex: _selectedIndex,
       ),
     );
   }
